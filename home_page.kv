@@ -1,0 +1,60 @@
+<HomePage>:
+    md_bg_color: 10/255,10/255,41/255,1
+    MDBoxLayout:
+        orientation: 'vertical'
+        #navbarbottom
+        
+
+        MDBottomNavigation:
+            panel_color: 10/255,10/255,41/255,1
+            MDBottomNavigationItem:
+                name: 'home'
+                icon:'home'
+                text: 'home'
+                
+                HomeScreen:
+                    id:home
+                
+
+            MDBottomNavigationItem:
+                name: 'music'
+                icon:'disc'
+                text: 'Music'
+                MusicScreen:
+                    id:music
+
+
+            MDBottomNavigationItem:
+                name: 'devices'
+                icon:'puzzle'
+                text: 'Devices'
+                #DeviceScreen:
+                MDScreen:
+                    md_bg_color: 10/255,10/255,41/255,1
+                    MDLabel:
+                        text: "Devices"
+                        color:'white'
+                    ScrollView:
+                    MDBoxLayout:
+                        md_bg_color:204/255,204/255,255/255,0.5
+                        size_hint_y: 0.002
+                        size_hint_x: 1
+
+
+            MDBottomNavigationItem:
+                name: 'monitoring'
+                icon:'trending-up'
+                text: 'Monitoring'
+                #MonitoringScreen:
+                MDScreen:
+                    md_bg_color: 10/255,10/255,41/255,1
+                    MDLabel:
+                        text: "Monitoring"
+                        color:'white'
+                    ScrollView:
+                    MDBoxLayout:
+                        md_bg_color:204/255,204/255,255/255,0.5
+                        size_hint_y: 0.002
+                        size_hint_x: 1
+
+

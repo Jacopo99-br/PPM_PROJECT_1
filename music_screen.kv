@@ -1,0 +1,87 @@
+<MusicScreen@MDScreen>
+    md_bg_color: 10/255,10/255,41/255,1
+    padding:10,10,10,10
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Music"
+            adaptive_height:True
+            md_bg_color: 10/255,10/255,41/255,1
+
+        MDTabs:
+            id: tabs
+            #on_tab_switch: app.on_tab_switch(*args)
+            background_color: 10/255,10/255,41/255,1
+            indicator_color:51/255,255/255,255/255,1
+            text_color_active:51/255,255/255,255/255,1
+            tab_indicator_anim:True
+            Tab:
+                icon:''
+                title:'Tracks'
+                MDScrollView:
+                    MDList:
+                        id:list_track
+            Tab:
+                icon:''
+                title:'Artist'
+                MDScrollView:
+                    MDList:
+                        id:list
+            Tab:
+                icon:''
+                title:'Album'
+                MDScrollView:
+                    MDList:
+                        id:list
+        MiniPlayer:
+    MDBoxLayout:
+        md_bg_color:204/255,204/255,255/255,0.5
+        size_hint_y: 0.002
+        size_hint_x: 1
+
+
+<MiniPlayer@MDFloatLayout>:
+    
+    size_hint_x:1
+    size_hint_y:0.1
+    pos_hint:{'center_x':0.5,'y':.0}
+    MDBoxLayout:
+        size:root.size
+        pos_hint:{'center_x':0.5,'center_y':0.5}
+        md_bg_color: 0/255,0/255,153/255,0.5
+        padding:10,10,10,10
+        orientation:'horizontal'
+        MDBoxLayout:
+            md_bg_color: 255/255,255/255,255/255,0.5
+            size_hint_x:0.10
+            pos_hint:{'x':0.1,'center_y':0.5}
+            radius:10,10,10,10
+        MDBoxLayout:
+            orientation:'horizontal'
+            padding:10,10,10,10
+            MDLabel:
+                text:"fvuiidfviufv"
+                halign:"left"
+            MDIconButton:
+                icon: "play"
+                pos_hint: {"x": .7, "center_y": .5}
+            MDIconButton:
+                icon: "skip-next"
+                pos_hint: {"x": .8, "center_y": .5}
+
+
+<MusicList@MDScreen>:
+    MDScrollView:
+        MDList:
+
+<MusicListItem>:
+    font_style:'Subtitle2'
+    secondary_font_style:'Caption'
+    IconRightWidget:
+        icon:"dots-vertical"
+
+<Tab>:#ogni tab conterrà la sua lista di canzioni/artisti/album
+    
+            
+                
+                

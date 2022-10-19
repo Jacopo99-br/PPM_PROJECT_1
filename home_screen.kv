@@ -1,0 +1,147 @@
+<HomeScreen@MDScreen>
+    md_bg_color: 10/255,10/255,41/255,1
+    padding:10,10,10,10
+    ScrollView:
+        size_hint_y: None
+        height:root.height-5
+        
+        MDGridLayout:
+            height:self.minimum_height
+            id:weather_widget
+            size_hint_y: None
+            cols:2
+            padding: [dp(15),dp(15),dp(15),dp(35)]
+            spacing: dp(15)
+
+
+            MDFloatLayout:   # The first FloatLayout in the first column in the gridLayout
+                size_hint:None,None
+                size: 0,140
+
+                MDBoxLayout:
+                    #md_bg_color: 255/255, 192/255, 203/255,1
+                    size_hint: None,None
+                    size: root.width-30,140
+                    pos_hint: {'x':.5,'y':.0}
+
+                    MDBoxLayout:
+                        md_bg_color: 165/255, 188/255, 217/255,0.5
+                        padding:10,10,10,10
+                        radius:10,10,10,10
+
+                        MDLabel:
+                            id:weather_info
+                            text:'22° [size=15]\n humidity: \n wind:[/size]'
+                            font_style:'H2'
+                            markup:True
+                            halign:'left'
+                            valign:'top'
+                        MDLabel:
+                            id:weather_description
+                            text:'[size=15]Description:ciao ciao ciao ciao [/size]'
+                            font_style:'H2'
+                            markup:True
+                            halign:'center'
+                            valign:'bottom'
+                            text_size:self.size
+                        MDIcon:
+                            icon:'weather-sunny'
+                            font_size:70
+                            valign:'center'
+                        
+                        
+
+
+            MDFloatLayout:  # The second FloatLayout in the second column of the gridLayout
+                
+                size_hint:None,None
+                size:0,0
+            
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            ElementCard:
+                icon_image:'video-box'
+                text:'Main text'
+                subtext:'details'
+                sub_subtext:'other details'
+            
+        
+    #MDLabel:
+        #id:center_label
+        #text: 'Add a device-widget'
+        #halign:'center'
+        #font_style: 'Subtitle2'
+    MDFloatingActionButton:
+        icon: "plus"
+        pos_hint: {'x': 0.8,'y': 0.05}
+        on_release:app.add_home_widget()
+    MDBoxLayout:
+        md_bg_color:204/255,204/255,255/255,0.5
+        size_hint_y: 0.002
+        size_hint_x: 1
+
+
+<ElementCard@MDCard>:
+    md_bg_color: 165/255, 188/255, 217/255,0.3
+    padding:10,10,10,10
+    radius:10,10,10,10
+    size_hint_y: None
+    height: 80
+    ripple_behavior:True
+    text:''
+    subtext:''
+    sub_subtext:''
+    icon_image:''
+
+    orientation:'horizontal'
+
+    MDIcon:
+        icon:root.icon_image
+        font_size:40
+        halign:'left'
+        #valign:'top'
+    MDBoxLayout:
+        padding:10,10,10,10
+        orientation:'vertical'
+        MDLabel:
+            text:root.text
+            font_style:'Body1'
+        MDLabel:
+            text:root.subtext
+            font_style:'Caption'
+        MDLabel:
+            text:root.sub_subtext
+            font_style:'Caption'
